@@ -33,12 +33,10 @@ pnpm add ph-addresses-location
 
 ```javascript
 import { 
- 
   getRegions, 
   getProvinces, 
   getCities, 
   getBarangays 
-<<<<<<< HEAD
 } from 'ph-addresses-locations';
 =======
 } from 'ph-addresses-location';
@@ -63,7 +61,7 @@ console.log(cities);
 const barangays = getBarangays('0102805000'); // Batac City
 console.log(barangays);
 // [{ code: '0102805001', name: 'Aglipay', cityCode: '0102805000' }, ...]
-<<<<<<< HEAD
+ 
 CommonJS (Node.js)
 javascriptconst phLocations = require('ph-addresses-locations');
 
@@ -124,7 +122,6 @@ const regions = getRegions();
   { code: '1300000000', name: 'NCR (National Capital Region)' },
   // ... 17 regions total
 ]
-<<<<<<< HEAD
 getRegion(regionCode)
 Get a specific region by code.
 javascriptconst region = getRegion('1300000000');
@@ -159,7 +156,6 @@ const provinces = getProvinces('0400000000');
 
 // Get all provinces
 const allProvinces = getProvinces();
-<<<<<<< HEAD
 Example Response:
 javascript[
 =======
@@ -181,7 +177,6 @@ javascript[
   },
   // ...
 ]
-<<<<<<< HEAD
 getProvince(provinceCode)
 Get a specific province by code.
 javascriptconst province = getProvince('0402100000');
@@ -216,7 +211,6 @@ const cities = getCities('0102800000');
 
 // Get all cities
 const allCities = getCities();
-<<<<<<< HEAD
 Example Response:
 javascript[
 =======
@@ -242,7 +236,7 @@ javascript[
   },
   // ...
 ]
-<<<<<<< HEAD
+
 getCity(cityCode)
 Get a specific city/municipality by code.
 javascriptconst city = getCity('0102805000');
@@ -277,7 +271,7 @@ const barangays = getBarangays('0102805000');
 
 // Get all barangays
 const allBarangays = getBarangays();
-<<<<<<< HEAD
+
 Example Response:
 javascript[
 =======
@@ -299,7 +293,7 @@ javascript[
   },
   // ...
 ]
-<<<<<<< HEAD
+
 getBarangay(barangayCode)
 Get a specific barangay by code.
 javascriptconst barangay = getBarangay('0102805001');
@@ -356,7 +350,7 @@ const address = getFullAddress('0102805001');
     name: 'Aglipay' 
   }
 }
-<<<<<<< HEAD
+
 getLocationHierarchy(code)
 Get location hierarchy from any PSGC code (region, province, city, or barangay).
 javascript// From city code
@@ -375,7 +369,7 @@ const hierarchy = getLocationHierarchy('0102805000');
 // From region code
 const regionHierarchy = getLocationHierarchy('0100000000');
 // Returns only region
-<<<<<<< HEAD
+ 
 searchLocations(query, type?)
 Search locations by name. Type can be 'all', 'region', 'province', 'city', or 'barangay'.
 javascript// Search all location types
@@ -392,7 +386,7 @@ const results = searchLocations('batac');
 
 // Search only cities
 const cities = searchLocations('batac', 'city');
-<<<<<<< HEAD
+ 
 Example Response:
 javascript{
 =======
@@ -414,7 +408,7 @@ javascript{
   ],
   barangays: []
 }
-<<<<<<< HEAD
+ 
 getLocationStats()
 Get statistics about available locations.
 javascriptconst stats = getLocationStats();
@@ -461,7 +455,7 @@ import {
   getProvinces, 
   getCities, 
   getBarangays 
-<<<<<<< HEAD
+ 
 } from 'ph-addresses-locations';
 =======
 } from 'ph-addresses-location';
@@ -488,7 +482,7 @@ const fullAddress = getFullAddress(selectedBarangay);
 
 console.log(fullAddress);
 // Complete address with region, province, city, barangay, and ZIP code
-<<<<<<< HEAD
+ 
 2. React Component Example
 jsximport React, { useState, useEffect } from 'react';
 =======
@@ -505,7 +499,7 @@ import {
   getCities, 
   getBarangays,
   getFullAddress 
-<<<<<<< HEAD
+ 
 } from 'ph-addresses-locations';
 =======
 } from 'ph-addresses-location';
@@ -605,7 +599,7 @@ function AddressSelector() {
 }
 
 export default AddressSelector;
-<<<<<<< HEAD
+ 
 3. Search Implementation
 javascriptimport { searchLocations } from 'ph-addresses-locations';
 =======
@@ -629,7 +623,7 @@ function handleSearch(searchTerm) {
 // Search for "batac"
 handleSearch('batac');
 // Returns cities and barangays matching "batac"
-<<<<<<< HEAD
+ 
 4. Display Full Address
 javascriptimport { getFullAddress } from 'ph-addresses-locations';
 =======
@@ -654,7 +648,7 @@ const formatted = `
 
 console.log(formatted);
 // Output: Aglipay, City of Batac, Ilocos Norte, Region I (Ilocos Region), ZIP: 2906
-<<<<<<< HEAD
+ 
 
 📊 Data Structure
 PSGC Code Format
@@ -679,7 +673,7 @@ The Philippine Standard Geographic Code uses a **10-digit format**:
 ││││└─────── Province (2 digits)
 ││└───────── Region (2 digits)
 └─────────── Always starts with 0
-<<<<<<< HEAD
+ 
 Examples:
 
 Region: 0100000000 (Region I)
@@ -722,7 +716,7 @@ typescript{
   name: string;        // e.g., 'Ilocos Norte'
   regionCode: string;  // e.g., '0100000000'
 }
-<<<<<<< HEAD
+ 
 City/Municipality
 typescript{
 =======
@@ -738,7 +732,7 @@ typescript{
   zipCode: string;       // e.g., '2906'
   districtCode: string;  // e.g., '2nd' (congressional district)
 }
-<<<<<<< HEAD
+ 
 Barangay
 typescript{
 =======
@@ -752,7 +746,7 @@ typescript{
   name: string;      // e.g., 'Aglipay'
   cityCode: string;  // e.g., '0102805000'
 }
-<<<<<<< HEAD
+ 
 
 🔧 TypeScript Support
 This package includes full TypeScript definitions:
@@ -778,7 +772,7 @@ import {
   LocationStats,
   getRegions,
   getFullAddress
-<<<<<<< HEAD
+ 
 } from 'ph-addresses-locations';
 
 const regions: Location[] = getRegions();
@@ -835,7 +829,7 @@ interface LocationStats {
   cities: number;
   barangays: number;
 }
-<<<<<<< HEAD
+ 
 
 📈 Database Coverage
 TypeCountRegions17Provinces82+Cities/Municipalities1,634+Barangays42,000+
@@ -896,7 +890,7 @@ npm test
 
 # Build
 npm run build
-<<<<<<< HEAD
+ 
 
 📄 License
 MIT © Vincent Esquivel
