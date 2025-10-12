@@ -25,5 +25,10 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/KuramitZui/ph-addresses-location.git"
-  }
+  },
+  "scripts": {
+    "build": "tsc",
+    "test": "echo \"No tests yet\""
+  },
+  "sideEffects": false
 }
