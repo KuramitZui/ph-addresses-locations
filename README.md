@@ -1,8 +1,5 @@
-<<<<<<< HEAD
-
-=======
 # 🇵🇭 Philippine Addresses & Locations
-<<<<<<< HEAD
+
 A lightweight npm package providing Philippine geographic data including **Regions, Provinces, Cities/Municipalities, and Barangays** with full hierarchy, ZIP codes, and search functionality. Designed for TypeScript and JavaScript applications.
 
 ## ✨ Features
