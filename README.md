@@ -1,4 +1,8 @@
+<<<<<<< HEAD
+
+=======
 # 🇵🇭 Philippine Addresses & Locations
+<<<<<<< HEAD
 A lightweight npm package providing Philippine geographic data, including Regions, Provinces, Cities/Municipalities, and Barangays with full hierarchy, ZIP codes, and search functionality. Designed for TypeScript and JavaScript applications.
 
 ✨ Features
@@ -19,11 +23,51 @@ bashpnpm add ph-addresses-locations
 🚀 Quick Start
 ES6 Modules (React, Vue, Angular, etc.)
 javascriptimport { 
+=======
+
+A lightweight npm package for Philippine Standard Geographic Code (PSGC) data including **Regions, Provinces, Cities/Municipalities, and Barangays** with complete address hierarchy and ZIP codes.
+
+## ✨ Features
+
+- ✅ **Complete PSGC Database** - All regions, provinces, cities, and barangays
+- ✅ **ZIP Code Support** - Postal codes for cities and municipalities
+- ✅ **District Information** - Congressional district codes
+- ✅ **Hierarchical Relationships** - Region → Province → City → Barangay
+- ✅ **Search Functionality** - Find locations by name
+- ✅ **TypeScript Support** - Full type definitions included
+- ✅ **Zero Dependencies** - Lightweight and fast
+- ✅ **Tree-shakeable** - Only import what you need
+
+## 📦 Installation
+
+```bash
+npm install ph-addresses-location
+```
+
+```bash
+yarn add ph-addresses-location
+```
+
+```bash
+pnpm add ph-addresses-location
+```
+
+## 🚀 Quick Start
+
+### ES6 Modules (React, Vue, Angular, etc.)
+
+```javascript
+import { 
+>>>>>>> f1b1eaa (Updated)
   getRegions, 
   getProvinces, 
   getCities, 
   getBarangays 
+<<<<<<< HEAD
 } from 'ph-addresses-locations';
+=======
+} from 'ph-addresses-location';
+>>>>>>> f1b1eaa (Updated)
 
 // Get all regions
 const regions = getRegions();
@@ -44,6 +88,7 @@ console.log(cities);
 const barangays = getBarangays('0102805000'); // Batac City
 console.log(barangays);
 // [{ code: '0102805001', name: 'Aglipay', cityCode: '0102805000' }, ...]
+<<<<<<< HEAD
 CommonJS (Node.js)
 javascriptconst phLocations = require('ph-addresses-locations');
 
@@ -62,11 +107,49 @@ javascriptconst regions = getRegions();
 // Returns: Array<{ code: string, name: string }>
 Example Response:
 javascript[
+=======
+```
+
+### CommonJS (Node.js)
+
+```javascript
+const phLocations = require('ph-addresses-location');
+
+const regions = phLocations.getRegions();
+const provinces = phLocations.getProvinces('0400000000');
+```
+
+### Default Import
+
+```javascript
+import phLocations from 'ph-addresses-location';
+
+const regions = phLocations.getRegions();
+const address = phLocations.getFullAddress('0102805001');
+```
+
+## 📖 API Reference
+
+### Region Functions
+
+#### `getRegions()`
+Get all regions in the Philippines.
+
+```javascript
+const regions = getRegions();
+// Returns: Array<{ code: string, name: string }>
+```
+
+**Example Response:**
+```javascript
+[
+>>>>>>> f1b1eaa (Updated)
   { code: '0100000000', name: 'Region I (Ilocos Region)' },
   { code: '0200000000', name: 'Region II (Cagayan Valley)' },
   { code: '1300000000', name: 'NCR (National Capital Region)' },
   // ... 17 regions total
 ]
+<<<<<<< HEAD
 getRegion(regionCode)
 Get a specific region by code.
 javascriptconst region = getRegion('1300000000');
@@ -76,12 +159,41 @@ Province Functions
 getProvinces(regionCode?)
 Get provinces. If regionCode is provided, returns provinces in that region only.
 javascript// Get provinces in CALABARZON
+=======
+```
+
+#### `getRegion(regionCode)`
+Get a specific region by code.
+
+```javascript
+const region = getRegion('1300000000');
+// Returns: { code: '1300000000', name: 'NCR (National Capital Region)' }
+```
+
+---
+
+### Province Functions
+
+#### `getProvinces(regionCode?)`
+Get provinces. If `regionCode` is provided, returns provinces in that region only.
+
+```javascript
+// Get provinces in CALABARZON
+>>>>>>> f1b1eaa (Updated)
 const provinces = getProvinces('0400000000');
 
 // Get all provinces
 const allProvinces = getProvinces();
+<<<<<<< HEAD
 Example Response:
 javascript[
+=======
+```
+
+**Example Response:**
+```javascript
+[
+>>>>>>> f1b1eaa (Updated)
   { 
     code: '0401000000', 
     name: 'Batangas', 
@@ -94,6 +206,7 @@ javascript[
   },
   // ...
 ]
+<<<<<<< HEAD
 getProvince(provinceCode)
 Get a specific province by code.
 javascriptconst province = getProvince('0402100000');
@@ -103,12 +216,41 @@ City/Municipality Functions
 getCities(provinceCode?)
 Get cities and municipalities. If provinceCode is provided, returns cities in that province only.
 javascript// Get cities in Ilocos Norte
+=======
+```
+
+#### `getProvince(provinceCode)`
+Get a specific province by code.
+
+```javascript
+const province = getProvince('0402100000');
+// Returns: { code: '0402100000', name: 'Cavite', regionCode: '0400000000' }
+```
+
+---
+
+### City/Municipality Functions
+
+#### `getCities(provinceCode?)`
+Get cities and municipalities. If `provinceCode` is provided, returns cities in that province only.
+
+```javascript
+// Get cities in Ilocos Norte
+>>>>>>> f1b1eaa (Updated)
 const cities = getCities('0102800000');
 
 // Get all cities
 const allCities = getCities();
+<<<<<<< HEAD
 Example Response:
 javascript[
+=======
+```
+
+**Example Response:**
+```javascript
+[
+>>>>>>> f1b1eaa (Updated)
   {
     code: '0102805000',
     name: 'City of Batac',
@@ -125,6 +267,7 @@ javascript[
   },
   // ...
 ]
+<<<<<<< HEAD
 getCity(cityCode)
 Get a specific city/municipality by code.
 javascriptconst city = getCity('0102805000');
@@ -134,12 +277,41 @@ Barangay Functions
 getBarangays(cityCode?)
 Get barangays. If cityCode is provided, returns barangays in that city only.
 javascript// Get barangays in Batac City
+=======
+```
+
+#### `getCity(cityCode)`
+Get a specific city/municipality by code.
+
+```javascript
+const city = getCity('0102805000');
+// Returns: { code: '0102805000', name: 'City of Batac', zipCode: '2906', ... }
+```
+
+---
+
+### Barangay Functions
+
+#### `getBarangays(cityCode?)`
+Get barangays. If `cityCode` is provided, returns barangays in that city only.
+
+```javascript
+// Get barangays in Batac City
+>>>>>>> f1b1eaa (Updated)
 const barangays = getBarangays('0102805000');
 
 // Get all barangays
 const allBarangays = getBarangays();
+<<<<<<< HEAD
 Example Response:
 javascript[
+=======
+```
+
+**Example Response:**
+```javascript
+[
+>>>>>>> f1b1eaa (Updated)
   { 
     code: '0102805001', 
     name: 'Aglipay', 
@@ -152,6 +324,7 @@ javascript[
   },
   // ...
 ]
+<<<<<<< HEAD
 getBarangay(barangayCode)
 Get a specific barangay by code.
 javascriptconst barangay = getBarangay('0102805001');
@@ -163,6 +336,32 @@ Get complete address hierarchy from a barangay code.
 javascriptconst address = getFullAddress('0102805001');
 Example Response:
 javascript{
+=======
+```
+
+#### `getBarangay(barangayCode)`
+Get a specific barangay by code.
+
+```javascript
+const barangay = getBarangay('0102805001');
+// Returns: { code: '0102805001', name: 'Aglipay', cityCode: '0102805000' }
+```
+
+---
+
+### Advanced Functions
+
+#### `getFullAddress(barangayCode)`
+Get complete address hierarchy from a barangay code.
+
+```javascript
+const address = getFullAddress('0102805001');
+```
+
+**Example Response:**
+```javascript
+{
+>>>>>>> f1b1eaa (Updated)
   region: { 
     code: '0100000000', 
     name: 'Region I (Ilocos Region)' 
@@ -182,24 +381,52 @@ javascript{
     name: 'Aglipay' 
   }
 }
+<<<<<<< HEAD
 getLocationHierarchy(code)
 Get location hierarchy from any PSGC code (region, province, city, or barangay).
 javascript// From city code
+=======
+```
+
+#### `getLocationHierarchy(code)`
+Get location hierarchy from any PSGC code (region, province, city, or barangay).
+
+```javascript
+// From city code
+>>>>>>> f1b1eaa (Updated)
 const hierarchy = getLocationHierarchy('0102805000');
 // Returns hierarchy up to city level
 
 // From region code
 const regionHierarchy = getLocationHierarchy('0100000000');
 // Returns only region
+<<<<<<< HEAD
 searchLocations(query, type?)
 Search locations by name. Type can be 'all', 'region', 'province', 'city', or 'barangay'.
 javascript// Search all location types
+=======
+```
+
+#### `searchLocations(query, type?)`
+Search locations by name. Type can be `'all'`, `'region'`, `'province'`, `'city'`, or `'barangay'`.
+
+```javascript
+// Search all location types
+>>>>>>> f1b1eaa (Updated)
 const results = searchLocations('batac');
 
 // Search only cities
 const cities = searchLocations('batac', 'city');
+<<<<<<< HEAD
 Example Response:
 javascript{
+=======
+```
+
+**Example Response:**
+```javascript
+{
+>>>>>>> f1b1eaa (Updated)
   regions: [],
   provinces: [],
   cities: [
@@ -212,6 +439,7 @@ javascript{
   ],
   barangays: []
 }
+<<<<<<< HEAD
 getLocationStats()
 Get statistics about available locations.
 javascriptconst stats = getLocationStats();
@@ -225,11 +453,44 @@ isValidPSGCCode('12345', 'region'); // false
 🎯 Usage Examples
 1. Cascading Address Selector
 javascriptimport { 
+=======
+```
+
+#### `getLocationStats()`
+Get statistics about available locations.
+
+```javascript
+const stats = getLocationStats();
+// Returns: { regions: 17, provinces: 82, cities: 1634, barangays: 42046 }
+```
+
+#### `isValidPSGCCode(code, type?)`
+Validate PSGC code format.
+
+```javascript
+isValidPSGCCode('0100000000', 'region'); // true
+isValidPSGCCode('0102805000', 'city'); // true
+isValidPSGCCode('12345', 'region'); // false
+```
+
+---
+
+## 🎯 Usage Examples
+
+### 1. Cascading Address Selector
+
+```javascript
+import { 
+>>>>>>> f1b1eaa (Updated)
   getRegions, 
   getProvinces, 
   getCities, 
   getBarangays 
+<<<<<<< HEAD
 } from 'ph-addresses-locations';
+=======
+} from 'ph-addresses-location';
+>>>>>>> f1b1eaa (Updated)
 
 // Step 1: Load regions
 const regions = getRegions();
@@ -252,15 +513,28 @@ const fullAddress = getFullAddress(selectedBarangay);
 
 console.log(fullAddress);
 // Complete address with region, province, city, barangay, and ZIP code
+<<<<<<< HEAD
 2. React Component Example
 jsximport React, { useState, useEffect } from 'react';
+=======
+```
+
+### 2. React Component Example
+
+```jsx
+import React, { useState, useEffect } from 'react';
+>>>>>>> f1b1eaa (Updated)
 import { 
   getRegions, 
   getProvinces, 
   getCities, 
   getBarangays,
   getFullAddress 
+<<<<<<< HEAD
 } from 'ph-addresses-locations';
+=======
+} from 'ph-addresses-location';
+>>>>>>> f1b1eaa (Updated)
 
 function AddressSelector() {
   const [regions] = useState(getRegions());
@@ -356,8 +630,17 @@ function AddressSelector() {
 }
 
 export default AddressSelector;
+<<<<<<< HEAD
 3. Search Implementation
 javascriptimport { searchLocations } from 'ph-addresses-locations';
+=======
+```
+
+### 3. Search Implementation
+
+```javascript
+import { searchLocations } from 'ph-addresses-location';
+>>>>>>> f1b1eaa (Updated)
 
 function handleSearch(searchTerm) {
   const results = searchLocations(searchTerm);
@@ -371,8 +654,17 @@ function handleSearch(searchTerm) {
 // Search for "batac"
 handleSearch('batac');
 // Returns cities and barangays matching "batac"
+<<<<<<< HEAD
 4. Display Full Address
 javascriptimport { getFullAddress } from 'ph-addresses-locations';
+=======
+```
+
+### 4. Display Full Address
+
+```javascript
+import { getFullAddress } from 'ph-addresses-location';
+>>>>>>> f1b1eaa (Updated)
 
 const barangayCode = '0102805001'; // Aglipay, Batac City
 const address = getFullAddress(barangayCode);
@@ -387,10 +679,24 @@ const formatted = `
 
 console.log(formatted);
 // Output: Aglipay, City of Batac, Ilocos Norte, Region I (Ilocos Region), ZIP: 2906
+<<<<<<< HEAD
 
 📊 Data Structure
 PSGC Code Format
 The Philippine Standard Geographic Code uses a 10-digit format:
+=======
+```
+
+---
+
+## 📊 Data Structure
+
+### PSGC Code Format
+
+The Philippine Standard Geographic Code uses a **10-digit format**:
+
+```
+>>>>>>> f1b1eaa (Updated)
 0102805001
 ││││││││││
 │││││││└└└─ Barangay (3 digits)
@@ -398,6 +704,7 @@ The Philippine Standard Geographic Code uses a 10-digit format:
 ││││└─────── Province (2 digits)
 ││└───────── Region (2 digits)
 └─────────── Always starts with 0
+<<<<<<< HEAD
 Examples:
 
 Region: 0100000000 (Region I)
@@ -413,28 +720,80 @@ typescript{
 }
 Province
 typescript{
+=======
+```
+
+**Examples:**
+- Region: `0100000000` (Region I)
+- Province: `0102800000` (Ilocos Norte)
+- City: `0102805000` (City of Batac)
+- Barangay: `0102805001` (Aglipay)
+
+### Data Objects
+
+#### Region
+```typescript
+{
+  code: string;      // e.g., '0100000000'
+  name: string;      // e.g., 'Region I (Ilocos Region)'
+}
+```
+
+#### Province
+```typescript
+{
+>>>>>>> f1b1eaa (Updated)
   code: string;        // e.g., '0102800000'
   name: string;        // e.g., 'Ilocos Norte'
   regionCode: string;  // e.g., '0100000000'
 }
+<<<<<<< HEAD
 City/Municipality
 typescript{
+=======
+```
+
+#### City/Municipality
+```typescript
+{
+>>>>>>> f1b1eaa (Updated)
   code: string;          // e.g., '0102805000'
   name: string;          // e.g., 'City of Batac'
   provinceCode: string;  // e.g., '0102800000'
   zipCode: string;       // e.g., '2906'
   districtCode: string;  // e.g., '2nd' (congressional district)
 }
+<<<<<<< HEAD
 Barangay
 typescript{
+=======
+```
+
+#### Barangay
+```typescript
+{
+>>>>>>> f1b1eaa (Updated)
   code: string;      // e.g., '0102805001'
   name: string;      // e.g., 'Aglipay'
   cityCode: string;  // e.g., '0102805000'
 }
+<<<<<<< HEAD
 
 🔧 TypeScript Support
 This package includes full TypeScript definitions:
 typescriptimport { 
+=======
+```
+
+---
+
+## 🔧 TypeScript Support
+
+This package includes full TypeScript definitions:
+
+```typescript
+import { 
+>>>>>>> f1b1eaa (Updated)
   Location, 
   Province, 
   City, 
@@ -444,12 +803,25 @@ typescriptimport {
   LocationStats,
   getRegions,
   getFullAddress
+<<<<<<< HEAD
 } from 'ph-addresses-locations';
 
 const regions: Location[] = getRegions();
 const address: FullAddress | null = getFullAddress('0102805001');
 Available Types
 typescriptinterface Location {
+=======
+} from 'ph-addresses-location';
+
+const regions: Location[] = getRegions();
+const address: FullAddress | null = getFullAddress('0102805001');
+```
+
+### Available Types
+
+```typescript
+interface Location {
+>>>>>>> f1b1eaa (Updated)
   code: string;
   name: string;
 }
@@ -488,6 +860,7 @@ interface LocationStats {
   cities: number;
   barangays: number;
 }
+<<<<<<< HEAD
 
 📈 Database Coverage
 TypeCountRegions17Provinces82+Cities/Municipalities1,634+Barangays42,000+
@@ -505,6 +878,40 @@ Development Setup
 bash# Clone the repository
 git clone https://github.com/yourusername/ph-addresses-locations.git
 cd ph-addresses-locations
+=======
+```
+
+---
+
+## 📈 Database Coverage
+
+| Type | Count |
+|------|-------|
+| Regions | 17 |
+| Provinces | 82+ |
+| Cities/Municipalities | 1,634+ |
+| Barangays | 42,000+ |
+
+Data based on the latest Philippine Standard Geographic Code (PSGC) from the Philippine Statistics Authority (PSA).
+
+---
+
+## 🤝 Contributing
+
+Contributions are welcome! Here's how you can help:
+
+1. **Report Issues** - Found a bug or incorrect data? [Open an issue](https://github.com/KuramitZui/ph-addresses-location/issues)
+2. **Submit PRs** - Have a fix or improvement? Submit a pull request
+3. **Update Data** - Help keep the PSGC data current
+4. **Improve Docs** - Better examples or clearer explanations
+
+### Development Setup
+
+```bash
+# Clone the repository
+git clone https://github.com/KuramitZui/ph-addresses-location/
+cd ph-addresses-location
+>>>>>>> f1b1eaa (Updated)
 
 # Install dependencies
 npm install
@@ -514,6 +921,7 @@ npm test
 
 # Build
 npm run build
+<<<<<<< HEAD
 
 📄 License
 MIT © Vincent Esquivel
@@ -540,3 +948,41 @@ Changelog
 
 
 Made with ❤️ for the Filipino Developer Community
+=======
+```
+
+---
+
+## 📄 License
+
+MIT © [Vincent Esquivel](https://github.com/KuramitZui/ph-addresses-location/)
+
+---
+
+## 🙏 Acknowledgments
+
+- Data source: [Philippine Statistics Authority (PSA)](https://psa.gov.ph/)
+- Based on the Philippine Standard Geographic Code (PSGC)
+
+---
+
+## 📮 Support
+
+- 🐛 **Issues**: [GitHub Issues](https://github.com/KuramitZui/ph-addresses-location/issues)
+- 💬 **Discussions**: [GitHub Discussions](https://github.com/KuramitZui/ph-addresses-location/discussions)
+- 📧 **Email**: vincent.esquivel@esquivince.online
+
+---
+
+## 🔗 Links
+
+- [NPM Package](https://www.npmjs.com/package/ph-addresses-location)
+- [GitHub Repository](https://github.com/KuramitZui/ph-addresses-location)
+- [Documentation](https://github.com/KuramitZui/ph-addresses-location#readme)
+- [Changelog](https://github.com/KuramitZui/ph-addresses-location/blob/main/CHANGELOG.md)
+
+---
+
+**Made with ❤️ for the Filipino Developer Community**
+>>>>>>> f1b1eaa (Updated)
+>>>>>>> 4727a64 (updated)
