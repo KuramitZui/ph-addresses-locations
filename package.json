@@ -1,0 +1,29 @@
+{
+  "name": "ph-addresses-locations",
+  "version": "1.0.0",
+  "description": "Philippine Standard Geographic Code (PSGC) - Regions, Provinces, Cities, and Barangays",
+  "main": "index.js",
+  "module": "index.js",
+  "types": "index.d.ts",
+  "files": [
+    "index.js",
+    "index.d.ts",
+    "data/"
+  ],
+  "keywords": [
+    "philippines",
+    "psgc",
+    "locations",
+    "regions",
+    "provinces",
+    "cities",
+    "barangays",
+    "address"
+  ],
+  "author": "Vincent Esquivel",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/ph-locations.git"
+  }
+}
