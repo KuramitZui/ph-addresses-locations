@@ -905,7 +905,7 @@ Based on the Philippine Standard Geographic Code (PSGC)
 
 🐛 Issues: GitHub Issues
 💬 Discussions: GitHub Discussions
-📧 Email: your.email@example.com
+📧 Email: vincent.esquivel@esquivince.online
 
 
 🔗 Links
