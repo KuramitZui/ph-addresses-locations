@@ -1,6 +1,6 @@
 {
-  "name": "ph-addresses-location",
-  "version": "1.0.0",
+  "name": "ph-addresses-locations",
+  "version": "1.0.1",
   "description": "Philippine Standard Geographic Code (PSGC) - Regions, Provinces, Cities, and Barangays",
   "main": "index.js",
   "module": "index.js",
@@ -24,7 +24,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/KuramitZui/ph-addresses-location.git"
+    "url": "https://github.com/KuramitZui/ph-addresses-locations.git"
   },
   "scripts": {
     "build": "tsc",

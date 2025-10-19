@@ -1,0 +1,56 @@
+[
+  {
+    "region": "NCR",
+    "province": "Metro Manila",
+    "city": "Quezon City",
+    "barangay": "Batasan Hills"
+  },
+  {
+    "region": "NCR",
+    "province": "Metro Manila",
+    "city": "Quezon City",
+    "barangay": "Commonwealth"
+  },
+  {
+    "region": "NCR",
+    "province": "Metro Manila",
+    "city": "Manila",
+    "barangay": "Ermita"
+  },
+  {
+    "region": "NCR",
+    "province": "Metro Manila",
+    "city": "Manila",
+    "barangay": "Tondo"
+  },
+  {
+    "region": "Region IV-A (CALABARZON)",
+    "province": "Cavite",
+    "city": "Dasmariñas",
+    "barangay": "San Agustin"
+  },
+  {
+    "region": "Region IV-A (CALABARZON)",
+    "province": "Cavite",
+    "city": "Imus",
+    "barangay": "Bayan Luma"
+  },
+  {
+    "region": "Region IV-A (CALABARZON)",
+    "province": "Laguna",
+    "city": "San Pablo",
+    "barangay": "San Buenaventura"
+  },
+  {
+    "region": "Region I (Ilocos Region)",
+    "province": "Pangasinan",
+    "city": "Alaminos",
+    "barangay": "Poblacion East"
+  },
+  {
+    "region": "Region I (Ilocos Region)",
+    "province": "Pangasinan",
+    "city": "Lingayen",
+    "barangay": "San Fabian"
+  }
+]

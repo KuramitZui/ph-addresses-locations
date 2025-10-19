@@ -16,15 +16,15 @@ A lightweight npm package providing Philippine geographic data including **Regio
 ## 📦 Installation
 
 ```bash
-npm install ph-addresses-location
+npm install ph-addresses-locations
 ```
 
 ```bash
-yarn add ph-addresses-location
+yarn add ph-addresses-locations
 ```
 
 ```bash
-pnpm add ph-addresses-location
+pnpm add ph-addresses-locations
 ```
 
 ## 🚀 Quick Start
@@ -38,8 +38,6 @@ import {
   getCities, 
   getBarangays 
 } from 'ph-addresses-locations';
-=======
-} from 'ph-addresses-location';
  
 
 // Get all regions
@@ -80,13 +78,12 @@ javascriptconst regions = getRegions();
 // Returns: Array<{ code: string, name: string }>
 Example Response:
 javascript[
-=======
 ```
 
 ### CommonJS (Node.js)
 
 ```javascript
-const phLocations = require('ph-addresses-location');
+const phLocations = require('ph-addresses-locations');
 
 const regions = phLocations.getRegions();
 const provinces = phLocations.getProvinces('0400000000');
@@ -95,7 +92,7 @@ const provinces = phLocations.getProvinces('0400000000');
 ### Default Import
 
 ```javascript
-import phLocations from 'ph-addresses-location';
+import phLocations from 'ph-addresses-locations';
 
 const regions = phLocations.getRegions();
 const address = phLocations.getFullAddress('0102805001');
@@ -131,7 +128,6 @@ Province Functions
 getProvinces(regionCode?)
 Get provinces. If regionCode is provided, returns provinces in that region only.
 javascript// Get provinces in CALABARZON
-=======
 ```
 
 #### `getRegion(regionCode)`
@@ -158,7 +154,6 @@ const provinces = getProvinces('0400000000');
 const allProvinces = getProvinces();
 Example Response:
 javascript[
-=======
 ```
 
 **Example Response:**
@@ -186,7 +181,7 @@ City/Municipality Functions
 getCities(provinceCode?)
 Get cities and municipalities. If provinceCode is provided, returns cities in that province only.
 javascript// Get cities in Ilocos Norte
-=======
+ 
 ```
 
 #### `getProvince(provinceCode)`
@@ -213,7 +208,7 @@ const cities = getCities('0102800000');
 const allCities = getCities();
 Example Response:
 javascript[
-=======
+
 ```
 
 **Example Response:**
@@ -246,7 +241,7 @@ Barangay Functions
 getBarangays(cityCode?)
 Get barangays. If cityCode is provided, returns barangays in that city only.
 javascript// Get barangays in Batac City
-=======
+
 ```
 
 #### `getCity(cityCode)`
@@ -274,7 +269,7 @@ const allBarangays = getBarangays();
 
 Example Response:
 javascript[
-=======
+
 ```
 
 **Example Response:**
@@ -305,7 +300,7 @@ Get complete address hierarchy from a barangay code.
 javascriptconst address = getFullAddress('0102805001');
 Example Response:
 javascript{
-=======
+
 ```
 
 #### `getBarangay(barangayCode)`
@@ -354,7 +349,7 @@ const address = getFullAddress('0102805001');
 getLocationHierarchy(code)
 Get location hierarchy from any PSGC code (region, province, city, or barangay).
 javascript// From city code
-=======
+
 ```
 
 #### `getLocationHierarchy(code)`
@@ -373,7 +368,7 @@ const regionHierarchy = getLocationHierarchy('0100000000');
 searchLocations(query, type?)
 Search locations by name. Type can be 'all', 'region', 'province', 'city', or 'barangay'.
 javascript// Search all location types
-=======
+
 ```
 
 #### `searchLocations(query, type?)`
@@ -389,7 +384,7 @@ const cities = searchLocations('batac', 'city');
  
 Example Response:
 javascript{
-=======
+
 ```
 
 **Example Response:**
@@ -422,7 +417,7 @@ isValidPSGCCode('12345', 'region'); // false
 🎯 Usage Examples
 1. Cascading Address Selector
 javascriptimport { 
-=======
+
 ```
 
 #### `getLocationStats()`
@@ -457,9 +452,6 @@ import {
   getBarangays 
  
 } from 'ph-addresses-locations';
-=======
-} from 'ph-addresses-location';
- 
 
 // Step 1: Load regions
 const regions = getRegions();
@@ -485,7 +477,7 @@ console.log(fullAddress);
  
 2. React Component Example
 jsximport React, { useState, useEffect } from 'react';
-=======
+
 ```
 
 ### 2. React Component Example
@@ -501,9 +493,6 @@ import {
   getFullAddress 
  
 } from 'ph-addresses-locations';
-=======
-} from 'ph-addresses-location';
- 
 
 function AddressSelector() {
   const [regions] = useState(getRegions());
@@ -602,13 +591,14 @@ export default AddressSelector;
  
 3. Search Implementation
 javascriptimport { searchLocations } from 'ph-addresses-locations';
-=======
 ```
 
 ### 3. Search Implementation
 
 ```javascript
-import { searchLocations } from 'ph-addresses-location';
+
+import { searchLocations } from 'ph-addresses-locations';
+
  
 
 function handleSearch(searchTerm) {
@@ -626,14 +616,14 @@ handleSearch('batac');
  
 4. Display Full Address
 javascriptimport { getFullAddress } from 'ph-addresses-locations';
-=======
+
 ```
 
 ### 4. Display Full Address
 
 ```javascript
-import { getFullAddress } from 'ph-addresses-location';
- 
+
+import { getFullAddress } from 'ph-addresses-locations';
 
 const barangayCode = '0102805001'; // Aglipay, Batac City
 const address = getFullAddress(barangayCode);
@@ -653,7 +643,7 @@ console.log(formatted);
 📊 Data Structure
 PSGC Code Format
 The Philippine Standard Geographic Code uses a 10-digit format:
-=======
+
 ```
 
 ---
@@ -689,7 +679,7 @@ typescript{
 }
 Province
 typescript{
-=======
+
 ```
 
 **Examples:**
@@ -719,7 +709,7 @@ typescript{
  
 City/Municipality
 typescript{
-=======
+
 ```
 
 #### City/Municipality
@@ -735,7 +725,7 @@ typescript{
  
 Barangay
 typescript{
-=======
+
 ```
 
 #### Barangay
@@ -751,7 +741,7 @@ typescript{
 🔧 TypeScript Support
 This package includes full TypeScript definitions:
 typescriptimport { 
-=======
+
 ```
 
 ---
@@ -779,8 +769,8 @@ const regions: Location[] = getRegions();
 const address: FullAddress | null = getFullAddress('0102805001');
 Available Types
 typescriptinterface Location {
-=======
-} from 'ph-addresses-location';
+} from 'ph-addresses-locations';
+
 
 const regions: Location[] = getRegions();
 const address: FullAddress | null = getFullAddress('0102805001');
@@ -847,7 +837,7 @@ Development Setup
 bash# Clone the repository
 git clone https://github.com/KuramitZui/ph-addresses-locations.git
 cd ph-addresses-locations
-=======
+
 ```
 
 ---
@@ -868,8 +858,7 @@ Data based on the latest Philippine Standard Geographic Code (PSGC) from the Phi
 ## 🤝 Contributing
 
 Contributions are welcome! Here's how you can help:
-
-1. **Report Issues** - Found a bug or incorrect data? [Open an issue](https://github.com/KuramitZui/ph-addresses-location/issues)
+1. **Report Issues** - Found a bug or incorrect data? [Open an issue](https://github.com/KuramitZui/ph-addresses-locations/issues)
 2. **Submit PRs** - Have a fix or improvement? Submit a pull request
 3. **Update Data** - Help keep the PSGC data current
 4. **Improve Docs** - Better examples or clearer explanations
@@ -877,10 +866,8 @@ Contributions are welcome! Here's how you can help:
 ### Development Setup
 
 ```bash
-# Clone the repository
-git clone https://github.com/KuramitZui/ph-addresses-location/
-cd ph-addresses-location
- 
+git clone https://github.com/KuramitZui/ph-addresses-locations/
+cd ph-addresses-locations
 
 # Install dependencies
 npm install
@@ -917,14 +904,13 @@ Changelog
 
 
 Made with ❤️ for the Filipino Developer Community
-=======
+
 ```
 
 ---
 
 ## 📄 License
-
-MIT © [Vincent Esquivel](https://github.com/KuramitZui/ph-addresses-location/)
+MIT © [Vincent Esquivel](https://github.com/KuramitZui/ph-addresses-locations/)
 
 ---
 
@@ -936,19 +922,18 @@ MIT © [Vincent Esquivel](https://github.com/KuramitZui/ph-addresses-location/)
 ---
 
 ## 📮 Support
-
-- 🐛 **Issues**: [GitHub Issues](https://github.com/KuramitZui/ph-addresses-location/issues)
-- 💬 **Discussions**: [GitHub Discussions](https://github.com/KuramitZui/ph-addresses-location/discussions)
+- 🐛 **Issues**: [GitHub Issues](https://github.com/KuramitZui/ph-addresses-locations/issues)
+- 💬 **Discussions**: [GitHub Discussions](https://github.com/KuramitZui/ph-addresses-locations/discussions)
 - 📧 **Email**: vincent.esquivel@esquivince.online
 
 ---
 
 ## 🔗 Links
 
-- [NPM Package](https://www.npmjs.com/package/ph-addresses-location)
-- [GitHub Repository](https://github.com/KuramitZui/ph-addresses-location)
-- [Documentation](https://github.com/KuramitZui/ph-addresses-location#readme)
-- [Changelog](https://github.com/KuramitZui/ph-addresses-location/blob/main/CHANGELOG.md)
+- [NPM Package](https://www.npmjs.com/package/ph-addresses-locations)
+- [GitHub Repository](https://github.com/KuramitZui/ph-addresses-locations)
+- [Documentation](https://github.com/KuramitZui/ph-addresses-locations#readme)
+- [Changelog](https://github.com/KuramitZui/ph-addresses-locations/blob/main/CHANGELOG.md)
 
 ---
 
